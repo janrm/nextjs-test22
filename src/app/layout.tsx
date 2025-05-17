@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import {Dosis, Geist, Geist_Mono} from "next/font/google";
+import {Dosis} from "next/font/google";
 import "./globals.css";
 
 const dosisSans = Dosis({
