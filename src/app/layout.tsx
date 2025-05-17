@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import {Dosis} from "next/font/google";
 import "./globals.css";
+import {ThemeProvider} from "next-themes";
+
 
 const dosisSans = Dosis({
     variable: "--font-dosis-sans",
@@ -24,10 +26,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${dosisSans.variable} ${dosisSans.variable} antialiased`}
-      >
+      <body className={`${dosisSans.variable} ${dosisSans.variable} antialiased`}>
+      <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
         {children}
+      </ThemeProvider>
       </body>
     </html>
   );
