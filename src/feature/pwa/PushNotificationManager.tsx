@@ -1,3 +1,4 @@
+"use client"
 import {useEffect, useState} from "react";
 import {sendNotification, subscribeUser, unsubscribeUser} from "@/app/(root)/actions";
 
