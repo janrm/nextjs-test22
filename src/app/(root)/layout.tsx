@@ -1,8 +1,6 @@
 import {Dosis} from "next/font/google";
-import "./globals.css";
+import "../globals.css";
 import {Metadata} from "next";
-
-
 
 const dosisSans = Dosis({
     variable: "--font-dosis-sans",
@@ -25,10 +23,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${dosisSans.variable} ${dosisSans.variable} antialiased dark`}>
-        {children}
+      <html lang="en" className={dosisSans.className} suppressHydrationWarning>
+      <body>
+          {children}
       </body>
-    </html>
+      </html>
   );
 }

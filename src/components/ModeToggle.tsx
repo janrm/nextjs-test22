@@ -1,9 +1,10 @@
+'use client'
 import React from 'react'
 import {useTheme} from "next-themes";
 import {Button} from "@/components/ui/button";
 import {MoonStar, Sun} from "lucide-react";
 
-const ModeToggle = ({className}:{className: string}) => {
+const ModeToggle = ({className}:{className?: string}) => {
     const { setTheme, theme } = useTheme()
 
     const toggleTheme = () => {
