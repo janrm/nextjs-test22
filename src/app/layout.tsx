@@ -1,7 +1,7 @@
-import type { Metadata } from "next";
 import {Dosis} from "next/font/google";
 import "./globals.css";
-import {ThemeProvider} from "next-themes";
+import {Metadata} from "next";
+
 
 
 const dosisSans = Dosis({
@@ -10,7 +10,7 @@ const dosisSans = Dosis({
 });
 
 export const metadata: Metadata = {
-    title: "Hisys PWA",
+    title: "Hisys",
     description: "Hisys Progressive Web App",
     manifest: '/manifest.webmanifest',
     icons: {
@@ -26,10 +26,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${dosisSans.variable} ${dosisSans.variable} antialiased`}>
-      <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+      <body className={`${dosisSans.variable} ${dosisSans.variable} antialiased dark`}>
         {children}
-      </ThemeProvider>
       </body>
     </html>
   );
