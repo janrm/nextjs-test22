@@ -18,5 +18,5 @@ self.addEventListener('push', function (event) {
 self.addEventListener('notificationclick', function (event) {
     console.log('Notification click received.')
     event.notification.close()
-    event.waitUntil(clients.openWindow('<https://your-website.com>'))
+    event.waitUntil(clients.openWindow('https://hisys-dev-001-747659628232.europe-west1.run.app/'))
 })
