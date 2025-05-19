@@ -5,7 +5,7 @@ export default function Home() {
   return (
       <div className="flex h-screen">
           <div>
-              <button></button>
+              <button>Alert</button>
           </div>
           <div className="flex flex-row w-full items-baseline">
           </div>

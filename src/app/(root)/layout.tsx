@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     description: "Hisys Progressive Web App",
     manifest: '/manifest.json',
     icons: {
-        icon: '/favicon2.ico'
+        icon: '/favicon.ico'
     }
 };
 
