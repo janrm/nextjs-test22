@@ -10,9 +10,9 @@ const dosisSans = Dosis({
 export const metadata: Metadata = {
     title: "Hisys",
     description: "Hisys Progressive Web App",
-    manifest: '/manifest.webmanifest',
+    manifest: '/manifest.json',
     icons: {
-        icon: '/favicon.ico'
+        icon: '/favicon2.ico'
     }
 };
 
