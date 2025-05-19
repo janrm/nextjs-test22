@@ -3,12 +3,13 @@ import {useEffect, useState} from "react";
 import {sendNotification, subscribeUser, unsubscribeUser} from "@/app/(root)/actions";
 
 function urlBase64ToUint8Array(base64String: string) {
+
     const padding = '='.repeat((4 - (base64String.length % 4)) % 4)
     const base64 = (base64String + padding).replace(/-/g, '+').replace(/_/g, '/')
 
     const rawData = window.atob(base64)
     const outputArray = new Uint8Array(rawData.length)
-
+console.log(rawData)
     for (let i = 0; i < rawData.length; ++i) {
         outputArray[i] = rawData.charCodeAt(i)
     }
@@ -43,7 +44,7 @@ export const PushNotificationManager = () => {
         const sub = await registration.pushManager.subscribe({
             userVisibleOnly: true,
             applicationServerKey: urlBase64ToUint8Array(
-                process.env.NEXT_PUBLIC_VAPID_PUBLIC_KEY!
+                "BCbDIlbyooIeMv5lUVt7A_YhtqOxlpq3yKSFqEj3JQNnioyHuzoVzoyJ3cyRl4ky1lue5hzds6D2Tz0SXpuj8hE"
             ),
         })
         setSubscription(sub)

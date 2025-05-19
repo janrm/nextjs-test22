@@ -47,6 +47,8 @@ USER nextjs
 EXPOSE 3000
 
 ENV PORT=3000
+ENV NEXT_PUBLIC_VAPID_PUBLIC_KEY=BCbDIlbyooIeMv5lUVt7A_YhtqOxlpq3yKSFqEj3JQNnioyHuzoVzoyJ3cyRl4ky1lue5hzds6D2Tz0SXpuj8hE
+ENV VAPID_PRIVATE_KEY=U5sEJK6iGx49iFdPBQhdwReGTN-ieWkJYZE1US7dD9M
 
 # server.js is created by next build from the standalone output
 # https://nextjs.org/docs/pages/api-reference/config/next-config-js/output

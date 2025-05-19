@@ -20,3 +20,21 @@ self.addEventListener('notificationclick', function (event) {
     event.notification.close()
     event.waitUntil(clients.openWindow('https://hisys-dev-001-747659628232.europe-west1.run.app'))
 })
+
+self.addEventListener('install', (event) => {
+    event.waitUntil(
+        caches.open('HiSysv1').then( (cache) => {
+            return cache.addAll([
+                '/'
+            ]);
+        })
+    )
+})
+
+self.addEventListener('fetch', (event) => {
+    event.respondWith(
+        caches.match(event.request).then((response) => {
+            return response || fetch(event.request);
+        })
+    )
+})
