@@ -1,5 +1,5 @@
 import {Dosis} from "next/font/google";
-import "../globals.css";
+import "./globals.css";
 import {Metadata} from "next";
 
 const dosisSans = Dosis({

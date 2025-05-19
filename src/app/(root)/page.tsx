@@ -5,7 +5,7 @@ export default function Home() {
   return (
       <div className="flex h-screen">
           <div>
-              <button>Alert</button>
+              <button onClick={(e) => {e.preventDefault(); alert('Alert')}}>Alert</button>
           </div>
           <div className="flex flex-row w-full items-baseline">
           </div>
