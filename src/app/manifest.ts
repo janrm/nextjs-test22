@@ -2,13 +2,12 @@ import type { MetadataRoute } from 'next'
 
 export default function manifest(): MetadataRoute.Manifest {
     return {
-        name: 'HiSys PWA',
         short_name: 'HiSysPWA',
-        description: 'Hockey Information System App',
+        name: 'Hisys',
         start_url: '/',
         display: 'standalone',
-        background_color: '#000000',
-        theme_color: '#ffffff',
+        background_color: '#207fc0',
+        theme_color: '#1b807d',
         icons: [
             {
                 src: '/icons/icon-192x192.png',
@@ -19,7 +18,7 @@ export default function manifest(): MetadataRoute.Manifest {
                 src: '/icons/icon-512x512.png',
                 "sizes": "512x512",
                 "type": "image/png",
-            },
+            }
         ],
     }
 }
