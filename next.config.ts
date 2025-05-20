@@ -1,4 +1,6 @@
 import type { NextConfig } from "next";
+import withPWA from 'next-pwa';
+
 
 
 
@@ -6,7 +8,17 @@ module.exports = {
     output: 'standalone',
 }
 
+
 const nextConfig: NextConfig = {
+    reactStrictMode: true,
+    swcMinify: true,
+    compiler: {
+        removeConsole: process.env.NODE_ENV !== 'development',
+    },
+    pwa: withPWA({
+        dest: "public",
+        disable: process.env.NODE_ENV === "development",
+    }),
     async headers() {
         return [
             {
@@ -50,4 +62,11 @@ const nextConfig: NextConfig = {
     }/* config options here */
 };
 
+
+/*export default withPWA({
+    dest: "public",
+    disable: process.env.NODE_ENV === "development",
+    register: true,
+    skipWaiting: true,
+})(nextConfig);*/
 export default nextConfig;
