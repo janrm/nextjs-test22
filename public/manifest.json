@@ -1,9 +1,13 @@
 {
   "name": "name",
   "short_name": "shortname",
-  "lang": "en",
-  "start_url": "/",
+  "theme_color": "#2196f3",
+  "background_color": "#2196f3",
   "display": "standalone",
+  "orientation": "portrait",
+  "scope": "/",
+  "start_url": "/",
+
   "icons": [
     {
       "src": "/icons/icon-192x192.png",
