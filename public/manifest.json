@@ -1,6 +1,6 @@
 {
-  "name": "name",
-  "short_name": "shortname",
+  "name": "Hockey Information System App",
+  "short_name": "hisysapp",
   "theme_color": "#2196f3",
   "background_color": "#2196f3",
   "display": "standalone",
