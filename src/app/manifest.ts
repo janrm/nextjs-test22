@@ -5,6 +5,7 @@ export default function manifest(): MetadataRoute.Manifest {
         short_name: 'hisys-app',
         name: 'Hockey Information System App',
         start_url: '/',
+        display: 'standalone',
         orientation: 'portrait-primary',
         background_color: '#207fc0',
         theme_color: '#1b807d',
