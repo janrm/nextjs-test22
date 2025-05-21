@@ -1,6 +1,8 @@
 import {Dosis} from "next/font/google";
-import "./globals.css";
+import "../globals.css";
 import {Metadata} from "next";
+import ModeToggle from "@/components/ModeToggle";
+import ThemeProvider from "@/components/ThemeProvider";
 
 const dosisSans = Dosis({
     variable: "--font-dosis-sans",
@@ -10,7 +12,7 @@ const dosisSans = Dosis({
 export const metadata: Metadata = {
     title: "Hisys",
     description: "Hisys Progressive Web App",
-    manifest: '/manifest.json',
+    manifest: '/manifest.webmanifest',
     icons: {
         icon: '/favicon.ico'
     }
@@ -24,9 +26,16 @@ export default function RootLayout({
 }>) {
   return (
       <html lang="en" className={dosisSans.className} suppressHydrationWarning>
-      <body>
+          <body >
+          <ThemeProvider attribute="class"
+                         defaultTheme="system"
+                         enableSystem
+                         disableTransitionOnChange>
+          <div className="container"><ModeToggle/></div>
           {children}
-      </body>
-      </html>
+          </ThemeProvider>
+          </body>
+
+</html>
   );
 }

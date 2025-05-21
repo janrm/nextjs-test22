@@ -1,4 +1,5 @@
 self.addEventListener('push', function (event) {
+
     if (event.data) {
         const data = event.data.json()
         const options = {
@@ -12,13 +13,14 @@ self.addEventListener('push', function (event) {
             },
         }
         event.waitUntil(self.registration.showNotification(data.title, options))
+        console.log('Received a push message', data.title)
     }
 })
 
 self.addEventListener('notificationclick', function (event) {
     console.log('Notification click received.')
     event.notification.close()
-    event.waitUntil(clients.openWindow('https://hisys-dev-001-747659628232.europe-west1.run.app'))
+    event.waitUntil(clients.openWindow('https://app-dev.hisys.nl/'))
 })
 
 self.addEventListener('install', (event) => {
