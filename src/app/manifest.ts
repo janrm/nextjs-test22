@@ -6,7 +6,7 @@ export default function manifest(): MetadataRoute.Manifest {
         name: 'Hockey Information System App',
         start_url: '/',
         display: 'standalone',
-        orientation: 'portrait-primary',
+        orientation: 'any',
         background_color: '#207fc0',
         theme_color: '#1b807d',
         icons: [
