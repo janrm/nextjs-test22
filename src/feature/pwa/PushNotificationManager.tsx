@@ -1,5 +1,5 @@
 import {useEffect, useState} from "react";
-import {sendNotification, subscribeUser, unsubscribeUser} from "@/app/(root)/actions";
+import {sendNotification, subscribeUser, unsubscribeUser} from "@/feature/pwa/actions";
 
 function urlBase64ToUint8Array(base64String: string) {
     const padding = '='.repeat((4 - (base64String.length % 4)) % 4)
@@ -41,9 +41,7 @@ export const PushNotificationManager = () => {
         const registration = await navigator.serviceWorker.ready
         const sub = await registration.pushManager.subscribe({
             userVisibleOnly: true,
-            applicationServerKey: urlBase64ToUint8Array(
-                process.env.NEXT_PUBLIC_VAPID_PUBLIC_KEY!
-            ),
+            applicationServerKey: urlBase64ToUint8Array("BCbDIlbyooIeMv5lUVt7A_YhtqOxlpq3yKSFqEj3JQNnioyHuzoVzoyJ3cyRl4ky1lue5hzds6D2Tz0SXpuj8hE"),
         })
         setSubscription(sub)
         const serializedSub = JSON.parse(JSON.stringify(sub))

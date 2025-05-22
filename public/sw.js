@@ -1,7 +1,7 @@
 self.addEventListener('push', function (event) {
 
     if (event.data) {
-        const data = event.data.json()
+        const data = event.data.text()
         const options = {
             body: data.body,
             icon: data.icon || '/icon.png',
@@ -12,8 +12,8 @@ self.addEventListener('push', function (event) {
                 primaryKey: '2',
             },
         }
-        event.waitUntil(self.registration.showNotification(data.title, options))
-        console.log('Received a push message', data.title)
+        event.waitUntil(self.registration.showNotification(data, options))
+        console.log('Received a push message', JSON.stringify(data))
     }
 })
 

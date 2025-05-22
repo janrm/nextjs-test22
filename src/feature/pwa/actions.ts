@@ -1,6 +1,7 @@
 'use server'
 
 import webpush, { PushSubscription } from 'web-push';
+import { db } from '@/lib/db';
 
 
 webpush.setVapidDetails(
@@ -15,7 +16,7 @@ export async function subscribeUser(sub: PushSubscription) {
     subscription = sub
     console.log('Subscription:', sub)
     // In a production environment, you would want to store the subscription in a database
-    // For example: await db.subscriptions.create({ data: sub })
+    await db.subscriptions.create({ data: sub })
     return { success: true }
 }
 
